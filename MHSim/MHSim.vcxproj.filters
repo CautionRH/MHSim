@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Interfaces">
+      <UniqueIdentifier>{fee5824d-b6df-4966-bf2d-fc49cdf2b65d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enumerations">
+      <UniqueIdentifier>{ed4b85ec-98ef-48cc-996e-e83a827099ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Heroes">
+      <UniqueIdentifier>{59e28eb6-ee76-4ca6-b1d7-de361935881f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Skills">
+      <UniqueIdentifier>{7631c6c9-a3dd-4365-806e-1222842f6a7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Skills\Cable">
+      <UniqueIdentifier>{2f8562ce-a703-4aa5-8ce6-c6ec768b9e89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Heroes\Cable">
+      <UniqueIdentifier>{31ecf9f2-9516-4329-ab93-a8f36f90c2dd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IHero.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ISkill.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="DamageTypes.h">
+      <Filter>Enumerations</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillTags.h">
+      <Filter>Enumerations</Filter>
+    </ClInclude>
+    <ClInclude Include="Cable.h">
+      <Filter>Heroes\Cable</Filter>
+    </ClInclude>
+    <ClInclude Include="BlisteringBolt.h">
+      <Filter>Skills\Cable</Filter>
+    </ClInclude>
+    <ClInclude Include="Affiliations.h">
+      <Filter>Enumerations</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Cable.cpp">
+      <Filter>Heroes\Cable</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

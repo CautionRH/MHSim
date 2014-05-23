@@ -1,0 +1,42 @@
+#pragma once
+
+
+enum SkillTags
+{
+	Archer,
+	Area,
+	Basic,
+	Bleed,
+	Breeze,
+	Captain,
+	Chain,
+	Chill,
+	Devil,
+	DiamondForm,
+	Finisher,
+	Flight,
+	Gift,
+	Hellfire,
+	Incantaion,
+	Invisibility,
+	Leap,
+	Opener,
+	Melee, 
+	Mine,
+	Movement,
+	Passive,
+	Ranged,
+	ShieldThrow,
+	Shout,
+	Spider,
+	Stance,
+	Stealth,
+	Summon,
+	Sword,
+	Teleport,
+	Tempest,
+	Toggle,
+	Turret,
+	Vengance,
+	Wind
+};
