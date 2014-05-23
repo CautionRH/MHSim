@@ -15,12 +15,15 @@
     <ClInclude Include="BlisteringBolt.h" />
     <ClInclude Include="Cable.h" />
     <ClInclude Include="DamageTypes.h" />
+    <ClInclude Include="EnergyPulse.h" />
+    <ClInclude Include="IEquipment.h" />
     <ClInclude Include="IHero.h" />
     <ClInclude Include="ISkill.h" />
     <ClInclude Include="SkillTags.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cable.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D4311489-9401-4979-9656-8473912460EC}</ProjectGuid>
@@ -56,9 +59,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>F:\Boost\boost_1_47;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>F:\Boost\boost_1_47\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

@@ -7,7 +7,7 @@ public:
 	Cable(void);
 	~Cable(void);
 	bool Create();
-	void DoSimulate();
+	void DoSimulate(double timeStamp);
 
 
 };

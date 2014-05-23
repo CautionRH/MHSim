@@ -54,10 +54,19 @@
     <ClInclude Include="Affiliations.h">
       <Filter>Enumerations</Filter>
     </ClInclude>
+    <ClInclude Include="IEquipment.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="EnergyPulse.h">
+      <Filter>Skills\Cable</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cable.cpp">
       <Filter>Heroes\Cable</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -10,8 +10,8 @@ using namespace std;
 class ISkill
 {
 public:
-	virtual bool Create();
-private:
+	virtual double GetDamage(double timeStamp) = 0;
+protected:
 	std::wstring _skillName;
 	std::vector<SkillTags> _skillTags;
 };

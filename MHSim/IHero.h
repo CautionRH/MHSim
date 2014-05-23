@@ -1,19 +1,23 @@
 #pragma once
 
+#include "ISkill.h"
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 class IHero
 {
 public:
-	virtual bool Create();
-	virtual void DoSimulate();
+	virtual bool Create() = 0;
+	virtual void DoSimulate(double timeStamp) = 0;
 
-private:
+protected:
 
 	std::wstring _heroName;
+	std::vector<ISkill*> _skills;
+
 
 	int _attackSpeed;
 	int _block;
