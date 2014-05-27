@@ -60,12 +60,33 @@
     <ClInclude Include="EnergyPulse.h">
       <Filter>Skills\Cable</Filter>
     </ClInclude>
+    <ClInclude Include="StatCalcs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroStats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VortexGrenade.h">
+      <Filter>Skills\Cable</Filter>
+    </ClInclude>
+    <ClInclude Include="PsychicHaze.h">
+      <Filter>Skills\Cable</Filter>
+    </ClInclude>
+    <ClInclude Include="Logit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PsychokineticBarrier.h">
+      <Filter>Skills\Cable</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cable.cpp">
       <Filter>Heroes\Cable</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Logit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

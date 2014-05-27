@@ -16,13 +16,20 @@
     <ClInclude Include="Cable.h" />
     <ClInclude Include="DamageTypes.h" />
     <ClInclude Include="EnergyPulse.h" />
+    <ClInclude Include="HeroStats.h" />
     <ClInclude Include="IEquipment.h" />
     <ClInclude Include="IHero.h" />
     <ClInclude Include="ISkill.h" />
+    <ClInclude Include="Logit.h" />
+    <ClInclude Include="PsychicHaze.h" />
+    <ClInclude Include="PsychokineticBarrier.h" />
     <ClInclude Include="SkillTags.h" />
+    <ClInclude Include="StatCalcs.h" />
+    <ClInclude Include="VortexGrenade.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cable.cpp" />
+    <ClCompile Include="Logit.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

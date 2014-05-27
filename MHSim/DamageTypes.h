@@ -8,3 +8,10 @@ enum DamageTypes
 	Energy,
 	Shadow
 };
+
+enum HitType
+{
+	Normal,
+	Critical,
+	Brutal
+};
