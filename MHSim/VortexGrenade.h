@@ -12,8 +12,13 @@ public:
 	double GetDamage(double timeStamp, HeroStats *hero)
 	{
 		double adjusted = 500;//(1.0 / ((1 + CalculateAttackSpeed(hero->GetAttackSpeed())) * _attackPerSecond)) * 1000;
-		if((_lastAttackTimeMS + adjusted) <= timeStamp)
+		if(_lastCastTimeMS == 0 || (_lastCastTimeMS + _skillDurationMS) < timeStamp) 
 		{
+			_lastCastTimeMS = timeStamp;
+			Logit::Instance()->LogMessage(boost::format("Cable casts [%s]") % _skillName);
+			::Sleep(_castTimeMS);
+			
+		} else if((_lastAttackTimeMS + adjusted) <= timeStamp) {
 			_lastAttackTimeMS = timeStamp;
 			HitType hitType = GetHitType(hero->GetCritRating(), hero->GetBrutalRating());
 			int dmg = 0;
@@ -51,6 +56,8 @@ public:
 		_skillTags.push_back(SkillTags::Area);
 		_skillTags.push_back(SkillTags::Ranged);
 		_damageType = DamageTypes::Energy;
+		_castTimeMS = 250;
+		_skillDurationMS = 9200;
 	}
 
 	~VortexGrenade(void);

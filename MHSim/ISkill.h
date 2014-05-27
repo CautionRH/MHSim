@@ -21,5 +21,9 @@ protected:
 	double _maxDamage;
 	double _attackPerSecond;
 	double _lastAttackTimeMS;
+	double _skillDurationMS;
+	double _castTimeMS;
+	double _lastCastTimeMS;
 	DamageTypes _damageType;
+
 };
