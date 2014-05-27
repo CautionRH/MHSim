@@ -11,7 +11,9 @@ enum DamageTypes
 
 enum HitType
 {
+	Cast,
 	Normal,
 	Critical,
-	Brutal
+	Brutal,
+	Resist
 };

@@ -4,6 +4,7 @@
 #include "VortexGrenade.h"
 #include "PsychicHaze.h"
 #include "PsychokineticBarrier.h"
+#include "AttackResult.h"
 
 Cable::Cable(void)
 {
@@ -37,6 +38,6 @@ void Cable::DoSimulate(double timeStamp)
 	std::vector<ISkill*>::iterator it;
 	 for (it=_skills.begin(); it<_skills.end(); it++)
 	 {
-		 double dmg = (*it)->GetDamage(timeStamp, _stats);
+		 AttackResult *dmg = (*it)->GetDamage(timeStamp, _stats);
 	 }
 }

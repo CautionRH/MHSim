@@ -7,11 +7,14 @@ class PsychicHaze : ISkill
 {
 public:
 		
-	double GetDamage(double timeStamp, HeroStats *hero)
+	AttackResult* GetDamage(double timeStamp, HeroStats *hero)
 	{
 		double adjusted = 500;//(1.0 / ((1 + CalculateAttackSpeed(hero->GetAttackSpeed())) * _attackPerSecond)) * 1000;
+		AttackResult* result = new AttackResult();
 		if(_lastCastTimeMS == 0 || (_lastCastTimeMS + _skillDurationMS) < timeStamp) 
 		{
+			result->Result = HitType::Cast;
+			result->ResourceCost = _resourceCost;
 			_lastCastTimeMS = timeStamp;
 			Logit::Instance()->LogMessage(boost::format("Cable casts [%s]") % _skillName);
 			::Sleep(_castTimeMS);
@@ -21,7 +24,7 @@ public:
 			int dmg = 0;
 			int range ( _maxDamage - _minDamage + 1);
 			dmg = rand() % range + _minDamage;
-			
+			result->Result = hitType;
 			switch(hitType)
 			{
 			case Normal:
@@ -36,9 +39,9 @@ public:
 				Logit::Instance()->LogMessage(boost::format("Cable's [%s] BRUTALED for %d") % _skillName % dmg);
 				break;
 			}
-			return dmg;
+			result->Damage = dmg;
 		}
-		return 0;
+		return result;
 	}
 
 	PsychicHaze(void)

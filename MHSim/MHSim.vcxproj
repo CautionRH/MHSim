@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Affiliations.h" />
+    <ClInclude Include="AttackResult.h" />
     <ClInclude Include="BlisteringBolt.h" />
     <ClInclude Include="Cable.h" />
     <ClInclude Include="DamageTypes.h" />

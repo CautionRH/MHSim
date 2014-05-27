@@ -1,0 +1,11 @@
+*.exe
+*.obj
+*.tlog
+*.idb
+*.pdb
+*.lastbuildstate
+*.ilk
+*.log
+*.opensdf
+*.log
+MHSim/Debug/MHSim.log
