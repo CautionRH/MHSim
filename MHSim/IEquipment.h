@@ -19,8 +19,8 @@ limitations under the License.
 -----------------------------------------------------------------------------
 */
 
-#pragma once
-
+#ifndef _I_EQUIPMENT_H__
+#define _I_EQUIPMENT_H__
 
 class IEquipment
 {
@@ -30,3 +30,5 @@ public:
 protected:
 	
 };
+
+#endif

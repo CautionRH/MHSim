@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<hero id="Cable" level="60">
+	<stats>
+		<stat id="crit_rating" value="3000"/>
+		<stat id="crit_damage" value="1500"/>
+		<stat id="brutal_rating" value="1500"/>
+		<stat id="brutal_damage" value="600"/>
+	</stats>
+	<skills>
+		<skill id="Vortex_grenade" level="20"/>
+	</skills>
+</hero>

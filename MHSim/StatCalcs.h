@@ -1,4 +1,3 @@
-
 /*
 -----------------------------------------------------------------------------
 This source file is part of MHSim
@@ -20,7 +19,8 @@ limitations under the License.
 -----------------------------------------------------------------------------
 */
 
-#pragma once
+#ifndef _STAT_CALCS_H__
+#define _STAT_CALCS_H__
 
 #include <Windows.h>
 
@@ -43,7 +43,7 @@ static inline double CalculateBrutalPercent(double brutalRating)
 	return (75.0 * brutalRating)/(brutalRating + 60.0 * 63.0 + 1);
 }
 
-static inline HitType GetHitType(double critRating, double brutalRating)
+static HitType GetHitType(double critRating, double brutalRating)
 {
 	int val = rand() % 10000 + 1;
 	int critRange = 100 * CalculateCritPercent(critRating);
@@ -68,3 +68,5 @@ static inline double GetBrutalDamagePercent(int brutalRating)
 {
 	return 300 + floor((brutalRating / (63.0 * 0.75)));
 }
+
+#endif

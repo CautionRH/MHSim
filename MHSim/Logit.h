@@ -19,7 +19,8 @@ limitations under the License.
 -----------------------------------------------------------------------------
 */
 
-#pragma once
+#ifndef _LOGIT_H__
+#define _LOGIT_H__
 
 #include <string>
 #include <boost/format.hpp>
@@ -39,7 +40,9 @@ public:
 
 	void LogMessage(const boost::format& f)
 	{
+		
 		std::string s(boost::str(f));
+		
 		const std::wstring wstr(s.begin(), s.end());
 		LogMessage(wstr);
 	}
@@ -52,3 +55,4 @@ private:
 	void FlushLog();
 };
 
+#endif

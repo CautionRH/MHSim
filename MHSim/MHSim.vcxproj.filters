@@ -31,6 +31,12 @@
     <Filter Include="Heroes\Cable">
       <UniqueIdentifier>{31ecf9f2-9516-4329-ab93-a8f36f90c2dd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Gear">
+      <UniqueIdentifier>{4c726ef0-292b-4dd1-8fe9-66eff4b7ce37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pugixml">
+      <UniqueIdentifier>{2907d412-5fac-47e1-84d1-7b52b5664c60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IHero.h">
@@ -81,6 +87,18 @@
     <ClInclude Include="AttackResult.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Equipment.h">
+      <Filter>Gear</Filter>
+    </ClInclude>
+    <ClInclude Include="pugixml\pugiconfig.hpp">
+      <Filter>pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="pugixml\pugixml.hpp">
+      <Filter>pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cable.cpp">
@@ -92,5 +110,14 @@
     <ClCompile Include="Logit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pugixml\pugixml.cpp">
+      <Filter>pugixml</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="README.txt" />
   </ItemGroup>
 </Project>

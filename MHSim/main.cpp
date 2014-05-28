@@ -25,20 +25,34 @@ limitations under the License.
 #include <chrono>
 
 #include "IHero.h"
+#include "HeroParser.h"
 #include "Cable.h"
-
+#include "Logit.h"
 using namespace std;
 
 int main(int argc, char** argv)
 {
-	Cable* c = new Cable();
+	
+	Cable* c = (Cable*)HeroParser::Instance()->LoadHero(argv[1]);
 	c->Create();
 	srand (time(NULL));
-	while(true)
+	auto startnow = std::chrono::steady_clock::now().time_since_epoch();
+	double startTS = std::chrono::duration_cast<std::chrono::milliseconds>(startnow).count();
+	int a = 100000;
+	int b = 2;
+
+	double lastTS = 0;
+	while(startTS + (10 * 1000) > lastTS )
 	{
 		auto now = std::chrono::steady_clock::now().time_since_epoch();
 		double ts = std::chrono::duration_cast<std::chrono::milliseconds>(now).count();
 		c->DoSimulate(ts);
+		lastTS = ts;
 	}
+	c->ReportStatistics();
+
+	cout << " Press enter to quit";
+	char z;
+	cin >> z;
 	return 0;
 }

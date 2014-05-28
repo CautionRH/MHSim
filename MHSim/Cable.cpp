@@ -26,9 +26,11 @@ limitations under the License.
 #include "PsychicHaze.h"
 #include "PsychokineticBarrier.h"
 #include "AttackResult.h"
+#include "IEquipment.h"
 
 Cable::Cable(void)
 {
+	
 }
 
 
@@ -39,26 +41,52 @@ Cable::~Cable(void)
 
 bool Cable::Create()
 {
+	_totalDamage = 0;
 
 	//TODO POPULATE FROM READING DATA OR SOMETHING
-	_stats = new HeroStats(0.35, 3475, 2000, 2500, 1100);
-
-	_skills.push_back((ISkill*)new BlisteringBolt());
-	
-	_skills.push_back((ISkill*)new VortexGrenade());
-	
-	_skills.push_back((ISkill*)new PsychicHaze());
-	
-	_skills.push_back((ISkill*)new PsychokineticBarrier());
-	
+	_stats = new HeroStats(0.35, 3475, 2000, 2500, 1100);	
 	return true;
+}
+
+bool Cable::AddSkill(ISkill* skill)
+{
+	_skills.push_back(skill);
 }
 
 void Cable::DoSimulate(double timeStamp)
 {
-	std::vector<ISkill*>::iterator it;
+	 HeroStats* tmpStats = _stats->Clone();
+	 std::vector<ISkill*>::iterator it;
 	 for (it=_skills.begin(); it<_skills.end(); it++)
 	 {
-		 AttackResult *dmg = (*it)->GetDamage(timeStamp, _stats);
+		 AttackResult *dmg = (*it)->GetDamage(timeStamp, tmpStats);
+		 if(dmg->Damage >0)	 _totalDamage += dmg->Damage;
 	 }
+
+	 delete tmpStats;
+
+	 
+}
+
+void Cable::UpdateModifiers()
+{
+	std::vector<IEquipment*>::iterator it;
+	for (it=_equipment.begin(); it<_equipment.end(); it++)
+	 {
+		
+	 }
+}
+
+void Cable::ReportStatistics()
+{
+	std::vector<ISkill*>::iterator it;
+	Logit::Instance()->LogMessage(L"==========================================");
+	Logit::Instance()->LogMessage(L"CABLE REPORT");
+	Logit::Instance()->LogMessage(boost::format("TOTAL DAMAGE: %d") % _totalDamage);
+	Logit::Instance()->LogMessage(L"==========================================");
+	Logit::Instance()->LogMessage(L"SKILL BREAKDOWN: ");
+	for (it=_skills.begin(); it<_skills.end(); it++)
+	{
+		(*it)->PrintReport();
+	}
 }

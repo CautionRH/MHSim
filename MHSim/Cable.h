@@ -19,8 +19,17 @@ limitations under the License.
 -----------------------------------------------------------------------------
 */
 
-#pragma once
+#ifndef _CABLE_H__
+#define _CABLE_H__
+
 #include "IHero.h"
+#include "ISkill.h"
+
+#include "BlisteringBolt.h"
+#include "EnergyPulse.h"
+#include "PsychicHaze.h"
+#include "PsychokineticBarrier.h"
+#include "VortexGrenade.h"
 
 class Cable : IHero
 {
@@ -28,9 +37,13 @@ public:
 	Cable(void);
 	~Cable(void);
 	bool Create();
+	bool AddSkill(ISkill* skill);
 	void DoSimulate(double timeStamp);
-
-
+	void ReportStatistics();
+	void UpdateModifiers();
+protected:
+	double _totalDamage;
 
 };
 
+#endif

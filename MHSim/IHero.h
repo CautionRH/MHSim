@@ -19,12 +19,15 @@ limitations under the License.
 -----------------------------------------------------------------------------
 */
 
-#pragma once
+#ifndef _I_HERO_H__
+#define _I_HERO_H__
 
-#include "ISkill.h"
 
 #include <iostream>
 #include <vector>
+
+#include "ISkill.h"
+#include "IEquipment.h"
 
 using namespace std;
 
@@ -33,14 +36,18 @@ class IHero
 public:
 	virtual bool Create() = 0;
 	virtual void DoSimulate(double timeStamp) = 0;
-	
+	void AddSkill(ISkill* skill) { _skills.push_back(skill);}
 protected:
 
 	std::wstring _heroName;
 	std::vector<ISkill*> _skills;
+	std::vector<IEquipment*> _equipment;
 
 	double _totalSimulatedDamage;
-
 	HeroStats* _stats;
+
+
+
 };
 
+#endif

@@ -19,7 +19,8 @@ limitations under the License.
 -----------------------------------------------------------------------------
 */
 
-#pragma once
+#ifndef _I_SKILL_H__
+#define _I_SKILL_H__
 
 #include <iostream>
 #include <vector>
@@ -35,7 +36,7 @@ class ISkill
 {
 public:
 	virtual AttackResult* GetDamage(double timeStamp, HeroStats* stats) = 0;
-	
+	virtual void PrintReport() = 0;
 protected:
 	std::string _skillName;
 	std::vector<SkillTags> _skillTags;
@@ -43,12 +44,22 @@ protected:
 	double _resourceCost;
 	double _minDamage;
 	double _maxDamage;
+	double _totalDamage;
+	double _numHits;
+	double _hitDamage;
+	double _numCrits;
+	double _critDamage;
+	double _numBrutals;
+	double _brutalDamage;
 	double _attackPerSecond;
 	double _lastAttackTimeMS;
 	double _skillDurationMS;
 	double _castTimeMS;
+	double _numCasts;
 	double _lastCastTimeMS;
 	DamageTypes _damageType;
 
 
 };
+
+#endif
